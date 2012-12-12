@@ -1070,3 +1070,8 @@
   (is (cf (typed.core/into-array> byte byte [(byte 1)]) (Array byte)))
   (is (= (get (into-array Byte/TYPE [(byte 1)]) 0) 
          (get (into-array> byte byte [(byte 1)]) 0))))
+
+;; This loading is a sufficient test.
+(tc-ignore
+ (defprotocol some-proto (some-proto-method [_]))
+ some-proto-method)
